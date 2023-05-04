@@ -37,7 +37,6 @@ labelsShifting <- data.frame(
 )
 
 # pca bez kategorija
-View(dataForPCA)
 dataForPCA$textColor <- "black"
 dataAverages <- dataForPCA
 
@@ -82,4 +81,6 @@ saveGGplot2(dataPlot = mergedPlot,
 
 rm(mainGenotypes, dataForPCA, x, visibleLabels, labelsShifting, pcaSaClusterima,
    pcaBotanicalTypeResult, pcaBezKategorijaResult, tmp, blups_sca, blupsWithBtForPCA)
-require(lmerTest)
+rm(mergedPlot, grafik12, grafik13, dataAverages)
+
+

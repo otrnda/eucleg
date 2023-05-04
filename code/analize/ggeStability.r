@@ -1,7 +1,7 @@
 
 require(ggrepel)
 require(ggpp)
-stabilityPlot <- function(fileNameIndex, plotName = "")
+stabilityPlot <- function(fileNameIndex, plotName = "", saveToFile = FALSE)
 {
     folder <- "GGE_Excel_Stability/"
     fileNames <- c( "01_STA_DaysToFlower.xlsx", "01_STA_ME1_DaysToFlower.xlsx", "01_STA_ME2_DaysToFlower.xlsx",
@@ -182,13 +182,15 @@ stabilityPlot <- function(fileNameIndex, plotName = "")
             plot.background = element_rect(colour = "white"), 
               )
     
-    return(ggePlot)
-    
-    # saveGGplot2(dataPlot = ggePlot, 
-    #             folder = "stability-plots",
-    #             fileName = fileName, 
-    #             isWide = FALSE,
-    #             aspect_ratio = 1)
+    if(saveToFile)
+    {
+        saveGGplot2(dataPlot = ggePlot, 
+                    folder = "stability-plots",
+                    fileName = fileName, 
+                    isWide = FALSE,
+                    aspect_ratio = 1)
+    }
+        return(ggePlot)
 }
 
 
@@ -264,7 +266,7 @@ saveGGplot2(dataPlot = mergedPlot,
 
 for(i in 1:27)
 {
-    stabilityPlot(i)
+    stabilityPlot(fileNameIndex = i, plotName = "", saveToFile = TRUE)
 }
 rm(i, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10,mergedPlot)
 

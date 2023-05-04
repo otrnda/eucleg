@@ -59,6 +59,7 @@ scaterBox <- function(folderName)
                     isWide = TRUE, aspect_ratio = 0.75)
     }
 }
+library(viridis)
 scaterBox("scater-box")
 
 
@@ -139,16 +140,9 @@ pPL <- boxBotanical(folderName = "box-botanical", variableIndex = 9)
 pSPP <- boxBotanical(folderName = "box-botanical", variableIndex = 10)
 
 
-mergedPlot <- ggpubr::ggarrange(pDTF, pDTM, pPH, pBR, pHFP, pPPF, pPPN, pPL, pSPP,
-                                labels = c("A", "B", "C", "D", "E", "F", "G", "H", "I"),
-                                font.label = list(size = 8, color = "black", face = "bold", family = NULL),
-                                ncol = 1, 
-                                nrow = 9, 
-                                hjust = -2,
-                                vjust = 2,
-                                common.legend = TRUE,
-                                legend = "bottom"
-) + theme(plot.background = element_rect(fill = "white", colour = "white"))
+
+
+
 
 mergedPlot <- ggpubr::ggarrange(pBR, pPL, pPPN, pSPP,
                                 labels = c("A", "B", "C", "D"),
@@ -160,6 +154,12 @@ mergedPlot <- ggpubr::ggarrange(pBR, pPL, pPPN, pSPP,
                                 common.legend = TRUE,
                                 legend = "bottom"
 ) + theme(plot.background = element_rect(fill = "white", colour = "white"))
+mergedPlot
+saveGGplot2(dataPlot = mergedPlot,
+            folder = "box-botanical",
+            fileName = "box-botanical-merged-4-traits",
+            isWide = TRUE,
+            aspect_ratio = 1)
 
 mergedPlot <- ggpubr::ggarrange(pDTM, pHFP, pPH, 
                                 labels = c("A", "B", "C"),
@@ -171,12 +171,10 @@ mergedPlot <- ggpubr::ggarrange(pDTM, pHFP, pPH,
                                 common.legend = TRUE,
                                 legend = "bottom"
 ) + theme(plot.background = element_rect(fill = "white", colour = "white"))
-
 mergedPlot
-
 saveGGplot2(dataPlot = mergedPlot,
             folder = "box-botanical",
-            fileName = "box-botanical-merged-3traits",
+            fileName = "box-botanical-merged-3-traits",
             isWide = TRUE,
             aspect_ratio = 1)
 
@@ -214,7 +212,7 @@ density <- function(folderName)
 density("density-plots")
 
 
-
+rm(pBR, pDTF, pDTM, pHFP, pPH, pPL, pPPF, pPPN, pSPP)
 
 
 

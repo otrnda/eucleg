@@ -13,18 +13,17 @@
     require(ppcor)
     require(lme4)
 
-
 # SOURCES
+    setwd("D:/mDocuments/GitRepositoriess/milos-eucleg/code")
     source("functions/commonFunctions.r")
     source("functions/graphFunctions.r")
     source("functions/analysisFunctions.r")
     source("functions/readDataFromExcel.r")
 
-# TODO : poseban folder za mape, heatmap i deskriptivnnu
 # DATA
-    setwd("D:/work/statistika/R/Eucleg/analize")
-    PODACI_FOLDER = "d:/work/statistika/R/Eucleg/data/"
-    REZULTATI_FOLDER = resultsFolderCreator("d:/work/statistika/R/Eucleg/results/")
+    
+    PODACI_FOLDER = "D:/mDocuments/GitRepositoriess/milos-eucleg/data/"
+    REZULTATI_FOLDER = resultsFolderCreator("D:/mDocuments/GitRepositoriess/milos-eucleg/results/")
     
     cols <- c("character", "integer", "integer", "integer", "character", "character", "integer", 
                   "character", "integer", "character", "integer", rep("double", 9))

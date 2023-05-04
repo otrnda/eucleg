@@ -1,6 +1,6 @@
 
 
-wwwPlot <- function(fileNameIndex)
+wwwPlot <- function(fileNameIndex, saveToFile = FALSE)
 {
     folder <- "GGE_Excel_Polygon/"
     fileNames <- c( 
@@ -153,13 +153,15 @@ wwwPlot <- function(fileNameIndex)
               plot.background = element_rect(colour = "white"), 
               )
         
-    
+    if(saveToFile)
+    {
+        saveGGplot2(dataPlot = wwwPlot,
+                    folder = "www-plots",
+                    fileName = fileNames[fileNameIndex],
+                    isWide = FALSE,
+                    aspect_ratio = 1)    
+    }
     return(wwwPlot)
-    # saveGGplot2(dataPlot = wwwPlot,
-    #              folder = "www-plots",
-    #              fileName = fileNames[fileNameIndex],
-    #              isWide = FALSE,
-    #              aspect_ratio = 1)
 }
 
 p1 <- wwwPlot(1) 
@@ -192,7 +194,7 @@ saveGGplot2(dataPlot = mergedPlot,
 
 for(i in 1:9)
 {
-    wwwPlot(i)
+    wwwPlot(fileNameIndex = i, saveToFile = TRUE)
 }
 rm(i, mergedPlot, p1, p2, p3, p4, p5, p6, p7, p8, p9)
 

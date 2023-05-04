@@ -46,6 +46,7 @@ num_repetitons_per_location <- num_genotypes_per_location %>% dplyr::select(Envi
     dplyr::group_by(Environment, gen_occurrences) %>% 
     dplyr::summarise(repetitons = n())
 
+dir.create(file.path(REZULTATI_FOLDER, "deskriptivna"), showWarnings = FALSE)
 writeToExcelFile("deskriptivna/deskriptivnaPoOsobinama", "BotType Mean SD", 
                  list(bot_type_means, bot_type_sd), writeRowNames = FALSE)
 writeToExcelFile("deskriptivna/deskriptivnaPoOsobinama", "GEN_PER_LOC", 
