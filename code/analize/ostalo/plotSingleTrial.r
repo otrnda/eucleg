@@ -1,0 +1,45 @@
+
+source(paste(getwd(), "functionsEucleg/graphFunctions.r",sep = "/"))
+# Boxplotovi
+boxPlotCustom(agro18, "AG18")
+boxPlotCustom(agro19, "AG19")
+boxPlotCustom(bor18, "bor18")
+boxPlotCustom(bor19, "bor19")
+boxPlotCustom(ikbks18, "ikbks18")
+boxPlotCustom(ikbks19, "ikbks19")
+boxPlotCustom(ikbks20, "ikbks20")
+boxPlotCustom(melle18, "melle18")
+boxPlotCustom(melle19, "melle19")
+
+# Heatmap
+heatmapCustom(agro18, "AG18", c(14:40))
+heatmapCustom(agro19, "AG19", c(14:39))
+heatmapCustom(bor18, "bor18", c(8:25,32:36))
+heatmapCustom(bor19, "bor19", c(8:25,32:36))
+heatmapCustom(ikbks18, "ikbks18", c(14:46))
+heatmapCustom(ikbks19, "ikbks19", c(14:47))
+heatmapCustom(ikbks20, "ikbks20", c(13:39,41:45))
+heatmapCustom(melle18, "melle18", c(14:36))
+heatmapCustom(melle19, "melle19", c(14:37))
+
+# Scaterplot
+scaterNumericColumns(agro18, "AG18")
+scaterNumericColumns(agro19, "AG19")
+scaterNumericColumns(bor18, "bor18")
+scaterNumericColumns(bor19, "bor19")
+scaterNumericColumns(ikbks18, "ikbks18")
+scaterNumericColumns(ikbks19, "ikbks19")
+scaterNumericColumns(ikbks20, "ikbks20")
+scaterNumericColumns(melle18, "melle18")
+scaterNumericColumns(melle19, "melle19")
+
+# Histogram
+histNumericColumns(agro18, "AG18")
+histNumericColumns(agro19, "AG19")
+histNumericColumns(bor18, "bor18")
+histNumericColumns(bor19, "bor19")
+histNumericColumns(ikbks18, "ikbks18")
+histNumericColumns(ikbks19, "ikbks19")
+histNumericColumns(ikbks20, "ikbks20")
+histNumericColumns(melle18, "melle18")
+histNumericColumns(melle19, "melle19")
